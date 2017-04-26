@@ -3,7 +3,7 @@
 <head>
 	<title>New GIFS</title>
 	<style type="text/css">
-		body {background: #efeef1; font-family: sans-serif; width: 100%; margin: 0;}
+			body {background: #efeef1; font-family: sans-serif; width: 100%; margin: 0;}
 			table {margin: 0 auto;}
 			tr {text-align: center; vertical-align: middle;}
 			td:first-child {font-weight: bold;}
@@ -45,6 +45,25 @@
 			<td><img src="5000_.gif"></td>
 			<td><img src="5000__.gif"></td>
 		</tr>
+		<tr>
+			<td>
+				<button type="button" onclick="dark()">Dark</button>
+				<button type="button" onclick="light()">Light</button>
+			</td>
+		</tr>
 	</table>
+	
+
+	<script>
+		function dark() {
+    		document.body.style.backgroundColor = "#101010";
+    		document.body.style.color = "white"
+		}
+
+		function light() {
+    		document.body.style.backgroundColor = "#efeef1";
+    		document.body.style.color = "black"
+		}
+	</script>
 </body>
 </html>
