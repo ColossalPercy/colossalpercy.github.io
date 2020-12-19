@@ -12,21 +12,6 @@ const nationEndpoint = (
     '&structure={"areaName":"areaName","cases":"cumCasesByPublishDate","rate":"cumCasesByPublishDateRate"}'
 );
 
-const regions = [
-    'Belfast',
-    'Birmingham',
-    'Bradford',
-    'Bristol, City of',
-    'City of Edinburgh',
-    'Glasgow City',
-    'Leeds',
-    'Leicester',
-    'Essex',
-    'Manchester',
-    'Newcastle upon Tyne',
-    'Nottinghamshire'
-]
-
 let copyData = null;
 
 const getData = async () => {
@@ -40,8 +25,6 @@ const getData = async () => {
     const nationData = (await nationResult.json()).data;
 
     const data = {
-        northernIreland: nationData.find(d => d.areaName === 'Northern Ireland'),
-        scotland: nationData.find(d => d.areaName === 'Scotland'),
         belfast: utlaData.find(d => d.areaName === 'Belfast'),
         birmingham: utlaData.find(d => d.areaName === 'Birmingham'),
         bradford: utlaData.find(d => d.areaName === 'Bradford'),
@@ -57,12 +40,10 @@ const getData = async () => {
     }
 
     const result = [
-        data.northernIreland.rate,
         data.belfast.rate,
         data.birmingham.rate,
         data.bradford.rate,
         data.bristol.rate,
-        data.scotland.rate,
         data.edinburgh.rate,
         data.glasgow.rate,
         data.leeds.rate,
@@ -72,7 +53,6 @@ const getData = async () => {
         data.newcastle.rate,
         data.nottinghamshire.rate,
         '',
-        data.northernIreland.cases,
         data.belfast.cases,
         data.birmingham.cases,
         data.bradford.cases,
